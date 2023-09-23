@@ -1,12 +1,12 @@
-import {createBrowserRouter} from "react-router-dom";
+import {createHashRouter} from "react-router-dom";
 import {MainLayout} from "../layouts";
 import {AppRoutes} from "./AppRoutes";
 import {Contacts, ItemPage, ItemsPage, Orders} from "../pages";
 
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
     {
-        path: AppRoutes.HOME,
+        path: AppRoutes.HOME || 'julides/',
         element: <MainLayout />,
         children: [
             {

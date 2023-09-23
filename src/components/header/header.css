@@ -6,7 +6,7 @@
     padding: 10px;
     position: fixed;
     top: 0;
-    z-index:3;
+    z-index: 3;
 }
 
 .menu-ul {
@@ -16,6 +16,7 @@
     justify-content: space-between;
     padding-left: 0;
 }
+
 
 .menu-li {
     list-style-type: none;
@@ -27,4 +28,115 @@
 
 .active {
     color: rgb(197, 124, 72);
+}
+
+/*  меню гарбугер*/
+.menu-media {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+    position: relative;
+}
+
+
+.logo {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 900;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    align-self: center;
+    background: linear-gradient(45deg, rgb(160, 162, 164) 0%, rgb(93, 88, 88) 25%, rgb(13, 89, 170) 50%, rgb(105, 101, 101) 75%, rgba(48, 93, 149, 1) 100%);
+    background-size: 200% 200%;
+    animation: gradientAnimation 4s infinite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+
+.menu-icon {
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    align-self: center;
+}
+
+.menu-icon .bar {
+    width: 90%;
+    height: 4px;
+    background-color: #333;
+    box-shadow: 2px 2px 10px 2px rgba(147, 190, 236, 0.5);
+    margin: 4px 0;
+}
+
+/* Анімація відкриття/закриття гамбургер-меню */
+.menu-icon:hover {
+    width: 10%;
+}
+
+.menu-icon .bar:hover {
+    background-color: #5e97b9;
+}
+
+.menu-ul-media {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: rgb(213, 212, 210);
+    animation: anim 4s forwards;
+}
+
+@keyframes anim {
+    from {
+        background-color: #f2f5f7;
+        transform: translateX(-20%);
+    }
+
+    to {
+        background-color: #094e7c;
+        transform: translateX(-50%);
+    }
+}
+
+.menu-ul-media a {
+    margin: 5px;
+    text-decoration: none;
+}
+
+.menu-ul-media a:hover {
+    color: white;
+}
+
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 0;
+        background: linear-gradient(to bottom, #272828, #ffffff);
+    }
+    
 }

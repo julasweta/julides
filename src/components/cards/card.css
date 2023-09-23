@@ -14,7 +14,7 @@
     width: 80%;
     height: 70%;
     cursor: pointer;
-   
+
 }
 
 
@@ -26,12 +26,21 @@ img {
     /* Тінь */
     border: 2px solid grey;
 }
-.card-img:hover{
-    animation: img-grow 5s ;
+
+.card-img:hover {
+    animation: img-grow 5s;
 }
 
 @keyframes img-grow {
-   to {
+    to {
         width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .card {
+        width: 90%;
+        margin: 5px;
     }
 }

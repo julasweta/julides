@@ -8,13 +8,17 @@ interface GenresState {
     activeGenre: number;
     trigerMainePage: boolean;
     portfolio: ICard[];
+    showBurger: boolean;
+    showMenuMedia: boolean;
 }
 
 const initialState: GenresState = {
     activeGenre: 1,
     genres: [],
     trigerMainePage: false,
-    portfolio: null
+    portfolio: null,
+    showBurger: false,
+    showMenuMedia: false,
 };
 
 /*-----------------AsyncThunk -------------------------------  */
@@ -37,8 +41,11 @@ export const PortfolioSlice = createSlice({
     name: "portfolioSlice",
     initialState,
     reducers: {
-        setActiveGenre: (state, action) => {
-            state.activeGenre = action.payload;
+        setShowBurger: (state, action) => {
+            state.showBurger = action.payload;
+        },
+        setShowMenuMedia: (state) => {
+            state.showMenuMedia = !state.showMenuMedia;
         },
 
     },
