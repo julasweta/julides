@@ -1,0 +1,131 @@
+.home {
+    width: 100%;
+    position: relative;
+}
+
+.home-img {
+    width: 100%;
+    height: 89.4vh;
+
+}
+
+.home-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Замість object-fit: contain; */
+}
+
+.home-img::before {
+    content: "";
+    /* Додаємо порожній контент для псевдоелемента */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Колір тла (чорний з прозорістю) */
+    z-index: 1;
+    /* Перекриває зображення */
+}
+
+.home-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    z-index: 2;
+    text-align: center;
+    animation: slideIn 3s ease-out;
+    transition: opacity 1s ease;
+    /* Додаємо плавну анімацію затемнення */
+}
+
+
+.show-about {
+    opacity: 1;
+    /* Показуємо блок About з плавною анімацією */
+}
+
+
+@keyframes slideIn {
+    0% {
+        left: -100%;
+        /* Початкове положення ліворуч за межами видимості */
+    }
+
+    100% {
+        left: 50%;
+        /* Кінцеве положення центрально зліва */
+    }
+}
+
+.home-info p {
+    font-size: 5rem;
+}
+
+h1 {
+    font-size: 2rem;
+    color: rgb(255, 250, 240)
+}
+
+.about {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+}
+
+.about h2 {
+    width: 100%;
+    font-size: 3rem;
+    text-align: center;
+    color: rgb(85, 65, 24);
+}
+
+.about-box {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+
+
+.about-img {
+    width: 45%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    align-self: center;
+}
+
+.about-img img {
+    width: 80%;
+    height: 90%;
+    object-fit: cover;
+
+}
+
+.about-info {
+    width: 40%;
+    height: 60%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+}
+
+.about-info p {
+    width: 80%;
+    color: rgb(80, 73, 73);
+    font-size: 1rem !important;
+}

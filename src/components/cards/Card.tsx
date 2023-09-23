@@ -1,0 +1,18 @@
+import React from 'react';
+import {ICard} from '../../interfaces';
+import './card.css';
+
+
+
+const Card: React.FC<{ card: ICard,onActive360: (img: string) => void }> = ({card,  onActive360}) => {
+    
+    return (
+        <div className="card">
+            <h2>{card.name}</h2>
+            <div className="card-img"><img src={card.jpg} onClick={()=>onActive360(card.jpg)} alt='img'></img></div>
+            <div className="card-description">{card.description}</div>
+        </div>
+    );
+};
+
+export {Card};
