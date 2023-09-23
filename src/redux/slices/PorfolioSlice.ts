@@ -10,6 +10,7 @@ interface GenresState {
     portfolio: ICard[];
     showBurger: boolean;
     showMenuMedia: boolean;
+    img360:string;
 }
 
 const initialState: GenresState = {
@@ -19,6 +20,7 @@ const initialState: GenresState = {
     portfolio: null,
     showBurger: false,
     showMenuMedia: false,
+    img360:null
 };
 
 /*-----------------AsyncThunk -------------------------------  */
@@ -46,6 +48,9 @@ export const PortfolioSlice = createSlice({
         },
         setShowMenuMedia: (state) => {
             state.showMenuMedia = !state.showMenuMedia;
+        },
+        setImg360: (state, action) => {
+            state.img360 = action.payload;
         },
 
     },

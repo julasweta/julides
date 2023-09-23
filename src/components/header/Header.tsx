@@ -42,7 +42,6 @@ const Header = () => {
         setActiveBtn(id);
     };
 
-    //  const mediaQuery = window.matchMedia('(max-width: 768px)');
 
     useEffect(() => {
         const handleResize = () => {

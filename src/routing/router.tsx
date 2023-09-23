@@ -6,7 +6,7 @@ import {Contacts, ItemPage, ItemsPage, Orders} from "../pages";
 
 export const router = createHashRouter([
     {
-        path: AppRoutes.HOME || 'julides/',
+        path: AppRoutes.HOME,
         element: <MainLayout />,
         children: [
             {
