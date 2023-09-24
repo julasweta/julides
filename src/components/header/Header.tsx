@@ -40,9 +40,11 @@ const Header = () => {
 
     const onActiveBtn = (id: number) => {
         setActiveBtn(id);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
 
+    // відслідковування розміру вікна
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);

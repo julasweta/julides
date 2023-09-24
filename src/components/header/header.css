@@ -3,6 +3,7 @@
     height: 10vh;
     background-color: rgb(246, 244, 243);
     display: flex;
+    justify-content: space-around;
     padding: 10px;
     position: fixed;
     top: 0;
@@ -37,6 +38,7 @@
     justify-content: space-between;
     padding: 0 10px 0 10px;
     position: relative;
+    z-index: 5;
 }
 
 
@@ -135,8 +137,8 @@
 
 @media screen and (max-width: 768px) {
     .header {
-        padding: 0;
         background: linear-gradient(to bottom, #272828, #ffffff);
+        width: 95%;
     }
     .logo{
         font-size: 0.6rem;

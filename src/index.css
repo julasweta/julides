@@ -7,20 +7,12 @@
   vertical-align: baseline;
   box-sizing: border-box;
 }
-.red{
-  color:red;
+
+.red {
+  color: red;
 }
 
 
-body {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  width: 100%;
-  font-size: 16px;
-  background-color: rgb(160, 165, 168);
-  font-family: 'Lora', serif;
-}
 
 #root {
   width: 100%;
@@ -33,7 +25,17 @@ body {
 body,
 #root {
   width: 100%;
-  height: 100%;
+}
+
+
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+  font-size: 16px;
+  background-color: rgb(160, 165, 168);
+  font-family: 'Lora', serif;
 }
 
 .portfolio {
@@ -49,9 +51,9 @@ body,
   padding-top: 40px;
   width: 100%;
   position: absolute;
-  top:10px;
+  top: 10px;
   display: none;
-  top:10px;
+  top: 10px;
   background-color: azure;
 }
 
@@ -76,9 +78,10 @@ body,
   align-items: center;
   flex-direction: column;
 }
-.panorama p{
-margin: 5px;
-  color:aliceblue;
+
+.panorama p {
+  margin: 5px;
+  color: aliceblue;
   font-size: 1rem;
   font-style: italic;
 }
@@ -93,53 +96,63 @@ margin: 5px;
   margin: 10px;
   cursor: pointer;
 }
+
 /* FOOTER*/
-footer{
- padding-bottom: 0;
+footer {
+  padding-bottom: 0;
   height: 100px;
 }
-.socila{
+
+.socila {
   padding-bottom: 5px;
 }
 
 /*----MAP-------*/
-.map{
+.map {
   margin-top: 100px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
-.map .map-rout{
+
+.map .map-rout {
   color: white;
-  font-size: 2rem;
+  font-size: 1rem;
   margin: 10px;
 }
 
 /* SOCIAL*/
-.social{
+.social {
   padding-top: 20px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.social a{
-text-decoration: none;
-color:white;
-width: 90px;
+
+.social a {
+  text-decoration: none;
+  color: white;
+  width: 90px;
 }
 
 /*ORDERS */
-.orders{
+.orders {
   padding-top: 150px;
   display: flex;
   justify-content: space-around;
   width: 100%;
 }
-.orders-img{
+
+.orders-img {
   width: 40% !important;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.orders-img img{
+
+.orders-img img {
   width: 100%;
   height: 50vh;
   object-fit: cover;
@@ -147,20 +160,21 @@ width: 90px;
 
 
 
- /* ------ MEDIA ---------  */
+/* ------ MEDIA ---------  */
 @media screen and (max-width: 768px) {
   .portfolio {
-    padding-top: 50px;
+    padding-top: 100px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .orders{
+  .orders {
     flex-direction: column;
   }
-  .orders-img{
+
+  .orders-img {
     display: none;
   }
- 
+
 }
