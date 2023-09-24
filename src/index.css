@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   border: 0;
   vertical-align: baseline;
   box-sizing: border-box;
+}
+.red{
+  color:red;
 }
 
 
@@ -14,6 +19,7 @@ body {
   width: 100%;
   font-size: 16px;
   background-color: rgb(41, 38, 38);
+  font-family: 'Lora', serif;
 }
 
 #root {
@@ -44,7 +50,7 @@ body,
   width: 100%;
   position: absolute;
   display: none;
-  
+  top:10px;
   background-color: azure;
 }
 
@@ -110,4 +116,23 @@ footer{
 text-decoration: none;
 color:white;
 width: 90px;
+}
+
+/*ORDERS */
+.orders{
+  padding-top: 150px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.orders-img{
+  width: 40% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.orders-img img{
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
 }

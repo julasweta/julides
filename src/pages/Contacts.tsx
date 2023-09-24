@@ -7,7 +7,7 @@ import {MyStories} from '../components/socialLinks/socialLinks/MyStories';
 const Contacts = () => {
     return (
         <> <SocialLinks />
-        <MyStories/>
+    
         </>
 
 
