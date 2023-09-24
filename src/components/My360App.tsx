@@ -22,7 +22,7 @@ useEffect(()=>{
 
         <div className="panorama" id='panorama'>
 
-            <ReactPhotoSphereViewer src={img360} width="70%" height='60vh' container="panorama" keyboard="always" />
+            <ReactPhotoSphereViewer src={process.env.PUBLIC_URL +'/'+img360} width="70%" height='60vh' container="panorama" keyboard="always" />
 
             <button onClick={() => onActive360('')} className="btn-360">Close</button>
         </div >

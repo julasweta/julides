@@ -2,7 +2,7 @@ import {ICard} from "../interfaces";
 import {IRes, apiService} from "./ApiServices";
 
 const portfolioService = {
-    getPortfolio: (): IRes<{record: {portfolio:ICard[]}}> =>
+    getPortfolio: (): IRes<{record: ICard[]}> =>
         apiService.get(''),
 };
 

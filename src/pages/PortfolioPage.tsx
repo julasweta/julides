@@ -14,13 +14,14 @@ const ItemsPage = () => {
     useEffect(() => {
         dispatch(portfolioActions.getPortfolio());
     }, [dispatch]);
+    console.log(portfolio);
 
     const onActive360 = (img: string) => {
         setActive360(!active360);
         dispatch(portfolioActions.setImg360(img));
     };
 
-   
+
 
 
     return (
