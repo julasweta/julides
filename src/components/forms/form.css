@@ -41,3 +41,9 @@ margin: 15px;
 .form-orders button:hover {
     background-color: #0056b3;
 }
+
+@media screen and (max-width: 768px){
+    .form-orders{
+        width:100%;
+    }   
+}

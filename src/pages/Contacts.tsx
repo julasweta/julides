@@ -1,12 +1,13 @@
 import React from 'react';
 import {SocialLinks} from '../components';
-import {MyStories} from '../components/socialLinks/socialLinks/MyStories';
+import MyMapComponent from '../components/socialLinks/socialLinks/MyMapComponent';
 
 
 
 const Contacts = () => {
     return (
-        <> <SocialLinks />
+        <> 
+        <MyMapComponent/>
     
         </>
 

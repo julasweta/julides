@@ -3,11 +3,11 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 30%;
     height: 300px;
     background-color: aliceblue;
     background-color: rgb(255 255 255 / 0.1);
-    backdrop-filter: blur(10px);
     margin: 5px;
 }
 
@@ -23,13 +23,18 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    box-shadow: 3px 3px 10px 3px rgb(104, 93, 73);
+   /* box-shadow: 3px 3px 10px 3px rgb(225, 223, 219);*/
     /* Тінь */
     border: 2px solid grey;
 }
 
 .card-img:hover {
     animation: img-grow 5s;
+}
+.card-description{
+    color:aliceblue;
+    padding: 5px;
+    text-align: center;
 }
 
 @keyframes img-grow {

@@ -138,5 +138,8 @@
         padding: 0;
         background: linear-gradient(to bottom, #272828, #ffffff);
     }
+    .logo{
+        font-size: 0.6rem;
+    }
     
 }
