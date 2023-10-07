@@ -1,7 +1,7 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {AxiosError} from "axios";
-import {ICard} from "../../interfaces";
-import {portfolioService} from "../../services";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { AxiosError } from "axios";
+import { portfolioService } from "../../services";
+import { ICard } from "../../interfaces/globalInterface";
 
 interface GenresState {
     genres: any;
@@ -10,7 +10,8 @@ interface GenresState {
     portfolio: ICard[];
     showBurger: boolean;
     showMenuMedia: boolean;
-    img360:string;
+    img360: string;
+    loading: boolean;
 }
 
 const initialState: GenresState = {
@@ -20,7 +21,8 @@ const initialState: GenresState = {
     portfolio: null,
     showBurger: false,
     showMenuMedia: false,
-    img360:null
+    img360: null,
+    loading: true,
 };
 
 /*-----------------AsyncThunk -------------------------------  */
@@ -28,8 +30,8 @@ export const getPortfolio = createAsyncThunk(
     "portfolioSlice/getPortfolio",
     async (_, thunkAPI) => {
         try {
-            const {data} = await portfolioService.getPortfolio();
-            return {record: data.record};
+            const { data } = await portfolioService.getPortfolio();
+            return { record: data.record };
         } catch (e) {
             const err = e as AxiosError;
             return thunkAPI.rejectWithValue(err);
@@ -52,21 +54,23 @@ export const PortfolioSlice = createSlice({
         setImg360: (state, action) => {
             state.img360 = action.payload;
         },
-
+        setLoading: (state, action) => {
+            state.loading = !state.loading;
+        },
     },
 
     extraReducers: (builder) =>
         builder.addCase(getPortfolio.fulfilled, (state, action) => {
-            console.log(action.payload.record);
             state.portfolio = action.payload.record;
+            state.loading = false;
         }),
 });
 
-const {reducer: portfolioReducer, actions} = PortfolioSlice;
+const { reducer: portfolioReducer, actions } = PortfolioSlice;
 
 const portfolioActions = {
     ...actions,
     getPortfolio,
 };
 
-export {portfolioActions, portfolioReducer};
+export { portfolioActions, portfolioReducer };

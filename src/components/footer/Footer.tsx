@@ -1,14 +1,13 @@
-import React from 'react';
-import './footer.css';
-import {SocialLinks} from '../socialLinks/socialLinks/SocialLinks';
-
+import React from "react";
+import "./footer.css";
+import { SocialLinks } from "../socialLinks/socialLinks/SocialLinks";
 
 const Footer = () => {
-    return (
-        <footer>
-            <SocialLinks />
-        </footer>
-    );
+  return (
+    <footer>
+      <SocialLinks />
+    </footer>
+  );
 };
 
-export {Footer};
+export { Footer };

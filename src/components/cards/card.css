@@ -1,51 +1,48 @@
 .card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 32%;
-    height: 400px;
-    background-color: aliceblue;
-    background-color: rgb(255 255 255 / 0.1);
-    margin: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 32%;
+  height: 400px;
+  background-color: aliceblue;
+  background-color: rgb(255 255 255 / 0.1);
+  margin: 5px;
 }
 
 .card-img {
-    width: 80%;
-    height: 65%;
-    cursor: pointer;
-
+  width: 80%;
+  height: 65%;
+  cursor: pointer;
 }
 
-
 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-   /* box-shadow: 3px 3px 10px 3px rgb(225, 223, 219);*/
-    /* Тінь */
-    border: 2px solid grey;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* box-shadow: 3px 3px 10px 3px rgb(225, 223, 219);*/
+  /* Тінь */
+  border: 2px solid grey;
 }
 
 .card-img:hover {
-    animation: img-grow 5s;
+  animation: img-grow 5s;
 }
-.card-description{
-    color:aliceblue;
-    padding: 5px;
-    text-align: center;
+.card-description {
+  color: aliceblue;
+  padding: 5px;
+  text-align: center;
 }
 
 @keyframes img-grow {
-    to {
-        width: 90%;
-    }
+  to {
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 768px) {
-
-    .card {
-        width: 90%;
-    }
+  .card {
+    width: 90%;
+  }
 }

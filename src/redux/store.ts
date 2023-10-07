@@ -1,11 +1,12 @@
-import {configureStore} from "@reduxjs/toolkit";
-import {portfolioReducer} from "./slices/PorfolioSlice";
+import { configureStore } from "@reduxjs/toolkit";
+import { blogReducer, portfolioReducer } from "./slices";
 // ...
 
 export const store = configureStore({
-    reducer: {
-        portfolio: portfolioReducer,
-    },
+  reducer: {
+    portfolio: portfolioReducer,
+    blog:blogReducer,
+  },
 });
 
 // типізація всіх states

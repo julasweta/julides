@@ -1,42 +1,37 @@
-import React from 'react';
-import {useAppDispatch, useAppSelector} from '../hooks/hooks';
-import {RootState} from '../redux/store';
-import {ReactPhotoSphereViewer} from 'react-photo-sphere-viewer';
-import {useEffect} from 'react';
-import {portfolioActions} from '../redux/slices';
+import React from "react";
+import { useAppDispatch, useAppSelector } from "../hooks/hooks";
+import { RootState } from "../redux/store";
+import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
+import { useEffect } from "react";
+import { portfolioActions } from "../redux/slices";
 
+const My360App: React.FC<{ onActive360: (img: string) => void }> = ({
+  onActive360,
+}) => {
+  const { img360 } = useAppSelector((state: RootState) => state.portfolio);
 
-const My360App: React.FC<{onActive360: (img: string) => void;}> = ({onActive360}) => {
+  useEffect(() => {}, [img360]);
 
-    const {img360} = useAppSelector((state: RootState) => state.portfolio);
+  return (
+    <div className="panorama" id="panorama">
+      <p>
+        {" "}
+        To control and auto-view the image, use the toolbar at the bottom of the
+        image
+      </p>
+      <ReactPhotoSphereViewer
+        src={process.env.PUBLIC_URL + "/" + img360}
+        width="70%"
+        height="60vh"
+        container="panorama"
+        keyboard="always"
+      />
 
-
-
-    useEffect(() => {
-
-    }, [img360]);
-
-
-
-    return (
-
-        <div className="panorama" id='panorama'>
-            <p> To control and auto-view the image, use the toolbar at the bottom of the image</p>
-            <ReactPhotoSphereViewer src={process.env.PUBLIC_URL + '/' + img360} width="70%" height='60vh' container="panorama" keyboard="always" />
-
-            <button onClick={() => onActive360('')} className="btn-360">Close</button>
-        </div >
-
-
-
-    );
+      <button onClick={() => onActive360("")} className="btn-360">
+        Close
+      </button>
+    </div>
+  );
 };
 
-export {My360App};
-
-
-
-
-
-
-
+export { My360App };

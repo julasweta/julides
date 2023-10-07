@@ -1,1 +1,2 @@
-export * from './PorfolioSlice';
+export * from "./PorfolioSlice";
+export * from "./BlogSlice";
