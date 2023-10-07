@@ -24,9 +24,9 @@ const SinglePost = () => {
     singlePost &&
     <div className="single">
       <h1>{singlePost.title}</h1>
-      {singlePost.description.blocks.map((block: Block) => <div className="block">
+      {singlePost.description.blocks.map((block: Block, ind:number) => <div className="block" key={ind}>
         <div className="block-img">
-          {block.photo.map((img: string) => <img src={process.env.PUBLIC_URL + "/" + img} alt="img"></img>)}
+          {block.photo.map((img: string, ind:number) => <img src={process.env.PUBLIC_URL + "/" + img} alt="img" key={ind}></img>)}
         </div>
         {block.title !== "" && <h3>{block.title}</h3>}
         <p>{block.paragraph}</p>

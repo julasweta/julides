@@ -47,12 +47,12 @@ const OrderForm = () => {
   const onSubmit = handleSubmit((data) => {
     sendTelegramMessage(data);
   });
-  console.log(errors.firstName && errors.firstName.type);
+
+  const telegramBotToken:string = process.env.REACT_TOKEN_TELLEGRAM;
+  const chatId:string = process.env.REACT_CHATID_TELEGRAM;
+  console.log(telegramBotToken);
 
   const sendTelegramMessage = async (data: any) => {
-    const telegramBotToken = "6111971504:AAGVYDRpXBaUTd1yWly1dqhyGw9l5t24RVY";
-    const chatId = "336871648";
-
     try {
       await axios.post(
         `https://api.telegram.org/bot${telegramBotToken}/sendMessage`,

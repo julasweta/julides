@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
 import { blogService } from "../../services";
-import { ICardInterior } from "../../interfaces/blogInterface";
+import { ICardInterior } from '../../interfaces/blogInterface';
 
 interface BlogState {
   posts: ICardInterior[];
@@ -27,6 +27,20 @@ export const getPosts = createAsyncThunk(
   }
 );
 
+const addPost = createAsyncThunk<ICardInterior, { postData: ICardInterior; }>(
+  "blogSlice/addPost",
+  async ({ postData }, { rejectWithValue, dispatch }) => {
+    try {
+      const { data } = await blogService.addPost(postData);
+      return data.results;
+    } catch (e) {
+      const err = e as AxiosError;
+      return rejectWithValue(err);
+    }
+  },
+);
+
+
 export const BlogSlice = createSlice({
     name: "blogSlice",
     initialState,
@@ -41,14 +55,18 @@ export const BlogSlice = createSlice({
       builder.addCase(getPosts.fulfilled, (state, action) => {
             state.posts = action.payload.record;
             
-        }),
+      })
+        .addCase(addPost.fulfilled, (state, action) => {
+    state.posts.push(action.payload)
+  }),
 });
 
 const { reducer: blogReducer, actions } = BlogSlice;
 
 const blogActions = {
     ...actions,
-    getPosts,
+  getPosts,
+    addPost,
 };
 
 export { blogActions, blogReducer };
