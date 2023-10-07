@@ -1,9 +1,8 @@
 import React from "react";
-import { useAppDispatch, useAppSelector } from "../hooks/hooks";
+import { useAppSelector } from "../hooks/hooks";
 import { RootState } from "../redux/store";
 import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
 import { useEffect } from "react";
-import { portfolioActions } from "../redux/slices";
 
 const My360App: React.FC<{ onActive360: (img: string) => void }> = ({
   onActive360,

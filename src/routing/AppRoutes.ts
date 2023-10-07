@@ -5,4 +5,6 @@ export const AppRoutes = {
   CONTACTS: "/contacts",
   ORDERS: "/orders",
   BLOG: "/blog",
+  POSTS:"/blog/posts",
+  POST:"/blog/posts/:id"
 };

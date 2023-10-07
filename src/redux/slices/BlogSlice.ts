@@ -4,13 +4,13 @@ import { blogService } from "../../services";
 import { ICardInterior } from "../../interfaces/blogInterface";
 
 interface BlogState {
-  showBurger: any;
-  posts:ICardInterior[],
+  posts: ICardInterior[];
+  singlePost: ICardInterior;
 }
 
 const initialState: BlogState = {
-  showBurger: [],
-  posts:[],
+  posts: [],
+  singlePost:null
 };
 
 /*-----------------AsyncThunk -------------------------------  */
@@ -31,15 +31,14 @@ export const BlogSlice = createSlice({
     name: "blogSlice",
     initialState,
     reducers: {
-        setShowBurger: (state, action) => {
-            state.showBurger = action.payload;
+        setSinglePost: (state, action) => {
+            state.singlePost = action.payload;
         },
     
     },
 
     extraReducers: (builder) =>
       builder.addCase(getPosts.fulfilled, (state, action) => {
-          console.log(action.payload);
             state.posts = action.payload.record;
             
         }),

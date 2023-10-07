@@ -5,7 +5,8 @@ import { SocialLinks } from "../socialLinks/socialLinks/SocialLinks";
 const Footer = () => {
   return (
     <footer>
-      <SocialLinks />
+    
+      
     </footer>
   );
 };

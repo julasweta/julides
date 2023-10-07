@@ -97,17 +97,63 @@ body {
 /* FOOTER*/
 footer {
   height: 100px;
-  bottom:0;
+  bottom: 0;
 }
 
 .socila {
   padding-bottom: 5px;
 }
 
-/*----MAP-------*/
-.map {
+/* ---------CONTACTS--------- */
+.contacts{
+  display: flex;
+  flex-direction: column;
   margin-top: 100px;
-  width: 80%;
+  padding:10px;
+}
+.contacts-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/*----MAP-------*/
+.call-button {
+  background: linear-gradient(90deg, #007BFF, #0056b3);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  background-size: 200% 100%;
+  animation: wave 5s linear infinite;
+}
+
+@keyframes wave {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.call-button:hover {
+  background-color: #0056b3;
+}
+
+.call-link {
+  text-decoration: none;
+  color: #fff;
+}
+.map {
+  width: 35%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -121,18 +167,33 @@ footer {
 }
 
 /* SOCIAL*/
-.social {
-  padding-top: 20px;
+.for-contact {
   width: 100%;
+  padding:10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
+.social {
+  padding-top: 20px;
+  width: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.social h3{
+  color: #4a4d50;
+  font-style: italic;
+}
+
 .social a {
   text-decoration: none;
-  color: white;
+  color: #ffffff;
   width: 90px;
+  margin: 5px;
 }
 
 /*ORDERS */
@@ -186,6 +247,8 @@ h1 {
   justify-content: space-between;
   cursor: pointer;
   transition: background-color 0.3s;
+  color: rgb(25, 94, 107);
+text-decoration: none;
 }
 
 .blog-card:hover {
@@ -199,9 +262,10 @@ h1 {
   align-items: center;
 }
 
+
 .blog-card_info h2 {
-align-self: center;
-width: 80%;
+  align-self: center;
+  width: 80%;
 }
 
 .blog-card img {
@@ -210,6 +274,50 @@ width: 80%;
   object-fit: cover;
 }
 
+/* ----------SINGLE --------------- */
+.single {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.block {
+  width: 95%;
+  background: white;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.block-img {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.block-img img {
+  width: 40%;
+  height: 30ch;
+  object-fit: cover;
+  box-shadow: -2px 4px 19px 0px rgba(0, 0, 0, 0.75);
+  margin-top: 15px;
+}
+
+.block p {
+  text-indent: 1rem;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.block h3 {
+  margin-top: 15px;
+  text-align: center;
+}
 
 
 
@@ -229,9 +337,16 @@ width: 80%;
   .orders-img {
     display: none;
   }
-.blog{
-  margin-top: 80px;
-}
+
+  .social {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .blog {
+    margin-top: 80px;
+  }
+
   .blog h1 {
     font-size: 0.8rem;
   }
@@ -239,23 +354,30 @@ width: 80%;
   .blog-card {
     flex-direction: column;
   }
-    .blog-card {
-      width: 90%;
-    }
-  
-    .blog-card_info {
-      width: 100%;
-      font-size: 0.7rem;
-  
-    }
-.blog-card_info h2{
-  width: 95%;
-  text-align: center;
-  height: 3rem;
-  align-self: center;
-}
+
+  .blog-card {
+    width: 90%;
+  }
+
+  .blog-card_info {
+    width: 100%;
+    font-size: 0.7rem;
+
+  }
+
+  .blog-card_info h2 {
+    width: 95%;
+    text-align: center;
+    height: 3rem;
+    align-self: center;
+  }
+
   .blog-card img {
     width: 100%;
     height: 30ch;
+  }
+
+  .block-img img {
+    width: 90%;
   }
 }

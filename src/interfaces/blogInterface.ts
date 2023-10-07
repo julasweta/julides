@@ -1,5 +1,6 @@
 export interface Block {
-  photo: string;
+  title?:string,
+  photo: string[];
   paragraph: string;
 }
 
@@ -10,5 +11,6 @@ export interface Description {
 export interface ICardInterior {
   id: number;
   title: string;
+  short?:string,
   description: Description;
 }

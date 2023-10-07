@@ -33,7 +33,7 @@ const Header = () => {
     {
       id: 5,
       name: "Blog",
-      path: AppRoutes.BLOG,
+      path: AppRoutes.POSTS,
     },
   ];
   const [activeBtn, setActiveBtn] = useState(1);

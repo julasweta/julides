@@ -1,24 +1,23 @@
-import React, { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import React from 'react';
+import { useAppSelector } from '../../hooks/hooks';
 import { RootState } from '../../redux/store';
-import { blogActions } from '../../redux/slices';
 import { CardBlog } from './CardBlog';
 
 
-const CardsBlog:React.FC = () => {
-  const dispatch = useAppDispatch();
+const CardsBlog: React.FC = () => {
 
   const { posts } = useAppSelector(
     (state: RootState) => state.blog,
   );
 
-  useEffect(() => {
-    dispatch(blogActions.getPosts());
-  }, [dispatch]);
+
 
   return (
     <div className="posts">
-      {posts && posts.map(post => <CardBlog key={post.id} post={post} />)}
+
+      <h1>Ідеї для дизайну та ремонту: залишайтесь в тренді та знайдіть своє джерело натхнення.</h1>
+      {posts && posts.map(post =>
+        <CardBlog key={post.id} post={post} />)}
     </div>
   )
 }
