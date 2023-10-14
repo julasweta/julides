@@ -16,17 +16,19 @@ const SinglePost = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const res = posts && posts.filter(post => post.id === +id)
-    setSinglePost(res[0] as any)
-  }, [posts, id])
+    const res = posts && posts.filter(post => post._id === id);
+    setSinglePost(res && res[0] as ICardInterior);
+  }, [id, posts])
 
+
+  console.log(singlePost);
   return (
     singlePost &&
     <div className="single">
-      <h1>{singlePost.title}</h1>
-      {singlePost.description.blocks.map((block: Block, ind:number) => <div className="block" key={ind}>
+      <h1>{singlePost && singlePost.title}</h1>
+        {singlePost.description.blocks.map((block: Block, ind: number) => <div className="block" key={ind}>
         <div className="block-img">
-          {block.photo.map((img: string, ind:number) => <img src={process.env.PUBLIC_URL + "/" + img} alt="img" key={ind}></img>)}
+          {block.photo.map((img: string, ind: number) => <img src={process.env.PUBLIC_URL + "/" + img} alt="img" key={ind}></img>)}
         </div>
         {block.title !== "" && <h3>{block.title}</h3>}
         <p>{block.paragraph}</p>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const CardBlog: React.FC<{ post: ICardInterior }> = ({ post }) => {
 
-  return <Link to={`${post.id}`}  className="blog-card">
+  return <Link to={`${post._id}`}  className="blog-card">
     
   
     <img src={process.env.PUBLIC_URL + "/" + post.description.blocks[0].photo[0]} alt="Меблі з Власним Характером - Фото 1" />

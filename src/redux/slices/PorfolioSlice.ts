@@ -31,7 +31,7 @@ export const getPortfolio = createAsyncThunk(
     async (_, thunkAPI) => {
         try {
             const { data } = await portfolioService.getPortfolio();
-            return { record: data.record };
+            return data;
         } catch (e) {
             const err = e as AxiosError;
             return thunkAPI.rejectWithValue(err);
@@ -61,7 +61,7 @@ export const PortfolioSlice = createSlice({
 
     extraReducers: (builder) =>
         builder.addCase(getPortfolio.fulfilled, (state, action) => {
-            state.portfolio = action.payload.record;
+            state.portfolio = action.payload;
             state.loading = false;
         }),
 });

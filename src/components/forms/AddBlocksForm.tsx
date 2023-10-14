@@ -21,6 +21,8 @@ function AddBlocksForm() {
     reset
   } = useForm<FormValues>();
 
+  console.log(errors);
+
   const onSubmit: SubmitHandler<FormValues> = (data) => {
    const data2 = {
       id: 3,

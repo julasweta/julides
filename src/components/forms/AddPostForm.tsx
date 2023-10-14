@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import "./addform.css"
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { RootState } from '../../redux/store';
 import { blogActions } from '../../redux/slices';
-import { ICardInterior } from '../../interfaces/blogInterface';
+import { ICardInteriorReq } from '../../interfaces/blogInterface';
 
 interface FormValues {
   title: string;
@@ -23,10 +23,11 @@ function AddPostForm() {
     formState: { errors },
   } = useForm<FormValues>();
 
+  console.log(errors);
+
+  //отримуємо блоки з AddFormBlocks(blocks) і відправляємо в базу
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    
-    const res: ICardInterior = {
-      id: posts.length + 1,
+    const res: ICardInteriorReq = {
       title: data.title,
       short: data.short,
       description: {

@@ -36,7 +36,6 @@ const OrderForm = () => {
 
   const {
     register,
-    setValue,
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>({

@@ -37,26 +37,21 @@ const Header = () => {
     },
   ];
   const [activeBtn, setActiveBtn] = useState(1);
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
+
   const { showBurger, showMenuMedia } = useAppSelector(
     (state: RootState) => state.portfolio,
   );
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const dispatch = useAppDispatch();
 
-  const onActiveBtn = (id: number) => {
-    setActiveBtn(id);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const dispatch = useAppDispatch();
 
   // відслідковування розміру вікна
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -71,9 +66,15 @@ const Header = () => {
   }, [windowWidth, dispatch]);
 
   const onShowMenuMedia = () => {
-    dispatch(portfolioActions.setShowMenuMedia());
-    setShow(!show);
+    dispatch(portfolioActions.setShowMenuMedia());;
   };
+
+  const onActiveBtn = (id: number) => {
+    setActiveBtn(id);
+    dispatch(portfolioActions.setShowMenuMedia());
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
 
   return (
     <div className="header">

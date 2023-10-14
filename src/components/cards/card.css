@@ -44,5 +44,10 @@ img {
 @media screen and (max-width: 768px) {
   .card {
     width: 90%;
+    height: 400px;
   }
+    .card-img {
+      height: 55%;
+    }
+  
 }

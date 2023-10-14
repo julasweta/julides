@@ -20,8 +20,8 @@ export const getPosts = createAsyncThunk(
   "blogSlice/getPosts",
   async (_, thunkAPI) => {
     try {
-      const { data } = await blogService.getPosts();
-      return { record: data.record };
+      const {data} = await blogService.getPosts();
+      return  data ;
     } catch (e) {
       const err = e as AxiosError;
       return thunkAPI.rejectWithValue(err);
@@ -63,7 +63,7 @@ export const BlogSlice = createSlice({
 
   extraReducers: (builder) =>
     builder.addCase(getPosts.fulfilled, (state, action) => {
-      state.posts = action.payload.record;
+      state.posts = action.payload;
       state.loading = false;
     })
       .addCase(addPost.fulfilled, (state, action) => {

@@ -9,8 +9,14 @@ export interface Description {
 }
 
 export interface ICardInterior {
-  id: number;
+  _id: string;
   title: string;
   short?:string,
+  description: Description;
+}
+
+export interface ICardInteriorReq {
+  title: string;
+  short?: string,
   description: Description;
 }

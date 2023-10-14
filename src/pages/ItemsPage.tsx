@@ -42,7 +42,7 @@ const ItemsPage = () => {
         <>
           {portfolio &&
             portfolio.map((card: ICard) => (
-              <Card card={card} key={card.id} onActive360={onActive360} />
+              <Card card={card} key={card._id} onActive360={onActive360} />
             ))}
           <div className={active360 ? "box-360 active-box-360" : "box-360"}>
             {img360 && <My360App onActive360={onActive360} />}

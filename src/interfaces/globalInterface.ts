@@ -5,7 +5,7 @@ export interface INavLink {
 }
 
 export interface ICard {
-  id: number;
+  _id: number;
   jpg: string;
   name: string;
   description: string;

@@ -17,7 +17,7 @@ const CardsBlog: React.FC = () => {
 
       <h1>Ідеї для дизайну та ремонту: залишайтесь в тренді та знайдіть своє джерело натхнення.</h1>
       {posts && posts.map(post =>
-        <CardBlog key={post.id} post={post} />)}
+        <CardBlog key={post._id} post={post} />)}
     </div>
   )
 }

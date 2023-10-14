@@ -1,10 +1,10 @@
-import { ICardInterior } from "../interfaces/blogInterface";
+import { ICardInterior } from '../interfaces/blogInterface';
 import { IRes, apiService } from "./ApiServices";
 
 
 const blogService = {
-  getPosts: (): IRes<{ record: ICardInterior[] }> => apiService.get(`6520646c0574da7622b5621d`),
-  addPost: (data:any):IRes<any> => apiService.post(`6520646c0574da7622b5621d`, data),
+  getPosts: (): IRes<ICardInterior[]> => apiService.get(`posts`),
+  addPost: (data: any): IRes<any> => apiService.post(`posts`, data),
 };
 
 export { blogService };
