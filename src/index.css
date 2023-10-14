@@ -332,6 +332,8 @@ text-decoration: none;
 
   .orders {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .orders-img {

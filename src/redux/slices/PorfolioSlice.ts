@@ -48,8 +48,8 @@ export const PortfolioSlice = createSlice({
         setShowBurger: (state, action) => {
             state.showBurger = action.payload;
         },
-        setShowMenuMedia: (state) => {
-            state.showMenuMedia = !state.showMenuMedia;
+        setShowMenuMedia: (state, action) => {
+            state.showMenuMedia = action.payload;
         },
         setImg360: (state, action) => {
             state.img360 = action.payload;

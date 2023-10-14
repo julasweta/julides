@@ -8,7 +8,7 @@ const My360App: React.FC<{ onActive360: (img: string) => void }> = ({
   onActive360,
 }) => {
   const { img360 } = useAppSelector((state: RootState) => state.portfolio);
-
+  
   useEffect(() => {}, [img360]);
 
   return (

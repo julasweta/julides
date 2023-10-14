@@ -66,12 +66,12 @@ const Header = () => {
   }, [windowWidth, dispatch]);
 
   const onShowMenuMedia = () => {
-    dispatch(portfolioActions.setShowMenuMedia());;
+    dispatch(portfolioActions.setShowMenuMedia(!showMenuMedia));
   };
 
   const onActiveBtn = (id: number) => {
     setActiveBtn(id);
-    dispatch(portfolioActions.setShowMenuMedia());
+    dispatch(portfolioActions.setShowMenuMedia(false));
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
