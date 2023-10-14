@@ -6,5 +6,6 @@ export const AppRoutes = {
   ORDERS: "/orders",
   BLOG: "/blog",
   POSTS:"/blog/posts",
-  POST:"/blog/posts/:id"
+  POST: "/blog/posts/:id",
+  ADDPOST: "/blog/add"
 };

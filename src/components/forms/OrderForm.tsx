@@ -48,9 +48,8 @@ const OrderForm = () => {
     sendTelegramMessage(data);
   });
 
-  const telegramBotToken:string = process.env.REACT_TOKEN_TELLEGRAM;
-  const chatId:string = process.env.REACT_CHATID_TELEGRAM;
-  console.log(telegramBotToken);
+  const telegramBotToken: string = process.env.REACT_APP_TOKEN_TELLEGRAM;
+  const chatId: string = process.env.REACT_APP_CHATID_TELEGRAM;
 
   const sendTelegramMessage = async (data: any) => {
     try {

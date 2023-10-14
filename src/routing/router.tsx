@@ -3,6 +3,7 @@ import { MainLayout } from "../layouts";
 import { AppRoutes } from "./AppRoutes";
 import { Blog, Contacts, ItemPage, ItemsPage, Orders, SinglePost } from "../pages";
 import CardsBlog from "../components/cards-blog/CardsBlog";
+import { AddPost } from "../pages/AddPost";
 
 export const router = createHashRouter([
   {
@@ -37,6 +38,11 @@ export const router = createHashRouter([
             path: AppRoutes.POSTS,
             element: <CardsBlog />,
           },
+          {
+            path: AppRoutes.ADDPOST,
+            element: <AddPost />,
+          },
+
         ]
       },
      

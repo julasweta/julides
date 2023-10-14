@@ -7,6 +7,10 @@ export const store = configureStore({
     portfolio: portfolioReducer,
     blog:blogReducer,
   },
+middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }), 
 });
 
 // типізація всіх states
