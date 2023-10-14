@@ -27,6 +27,7 @@ To run the application on your local computer, follow these steps:
 ```bash
 git clone https://github.com/julasweta/julides.git
 
+```
 
 # JuliDes
 
