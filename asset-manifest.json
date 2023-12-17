@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/julides/static/css/main.b29d67d8.css",
-    "main.js": "/julides/static/js/main.3db917ce.js",
+    "main.js": "/julides/static/js/main.3799bb05.js",
     "index.html": "/julides/index.html",
     "main.b29d67d8.css.map": "/julides/static/css/main.b29d67d8.css.map",
-    "main.3db917ce.js.map": "/julides/static/js/main.3db917ce.js.map"
+    "main.3799bb05.js.map": "/julides/static/js/main.3799bb05.js.map"
   },
   "entrypoints": [
     "static/css/main.b29d67d8.css",
-    "static/js/main.3db917ce.js"
+    "static/js/main.3799bb05.js"
   ]
 }
